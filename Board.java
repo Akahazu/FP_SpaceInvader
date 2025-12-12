@@ -65,11 +65,11 @@ public class Board extends JPanel implements ActionListener {
     }
 
     private void drawObjects(Graphics g) {
-        // Gambar Player (Hijau)
+        // Gambar Player
         g.setColor(Color.GREEN);
         g.fillRect(player.getX(), player.getY(), 30, 20); // Hardcoded width/height visual
 
-        // Gambar Aliens (Merah)
+        // Gambar Alien
         g.setColor(Color.RED);
         for (Alien a : aliens) {
             if (a.isVisible()) {
@@ -77,7 +77,7 @@ public class Board extends JPanel implements ActionListener {
             }
         }
 
-        // Gambar Shot (Kuning)
+        // Gambar Shot
         if (shot.isVisible()) {
             g.setColor(Color.YELLOW);
             g.fillRect(shot.getX(), shot.getY(), 4, 10);
@@ -111,7 +111,7 @@ public class Board extends JPanel implements ActionListener {
         boolean changeDir = false;
         for (Alien a : aliens) {
             if (a.isVisible()) {
-                a.act(direction); // Gerak horizontal
+                a.act(direction); 
                 if (a.getX() >= B_WIDTH - 20 || a.getX() <= 0) {
                     changeDir = true;
                 }
@@ -133,7 +133,7 @@ public class Board extends JPanel implements ActionListener {
     }
 
     private void checkCollisions() {
-        // 1. Peluru kena Alien
+        // Jika peluru kena Alien
         if (shot.isVisible()) {
             Iterator<Alien> it = aliens.iterator();
             while (it.hasNext()) {
@@ -146,13 +146,13 @@ public class Board extends JPanel implements ActionListener {
             }
         }
 
-        // 2. Cek Menang
+        // Cek Menang
         if (aliens.isEmpty()) {
             inGame = false;
             message = "YOU WIN!";
         }
 
-        // 3. Cek Kalah (Alien nabrak player / sampai bawah)
+        // Cek Kalah 
         for (Alien a : aliens) {
             if (a.isVisible()) {
                 if (a.getBounds(player)) {
