@@ -12,12 +12,11 @@ public class Player extends Sprite {
     public void move(int dx) {
         x += dx;
         
-        // Batasi agar tidak keluar layar
+        // Batasan gerak di layar
         if (x <= 0) x = 0;
         if (x >= BOARD_WIDTH - width) x = BOARD_WIDTH - width;
     }
     
-    // Method untuk menembak
     public Shot shoot() {
         // Munculkan peluru di tengah pesawat
         return new Shot(x + (width / 2) - 2, y);
