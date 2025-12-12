@@ -2,7 +2,7 @@ import javax.swing.JFrame;
 
 public class SpaceInvadersGame {
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Space Invaders OOP");
+        JFrame frame = new JFrame("Space Invaders");
        
         frame.add(new Board());
         
