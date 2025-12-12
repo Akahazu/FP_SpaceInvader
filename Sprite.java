@@ -16,7 +16,7 @@ public class Sprite {
     public boolean isVisible() { return visible; }
     public void setVisible(boolean visible) { this.visible = visible; }
     
-    // Untuk mengecek tabrakan (Collision)
+    // Untuk mengecek Collision
     public boolean getBounds(Sprite other) {
         return (x < other.x + other.width && 
                 x + width > other.x &&
