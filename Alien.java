@@ -5,12 +5,12 @@ public class Alien extends Sprite {
         this.height = 20;
     }
     
-    // Gerakan alien (hanya gerak horizontal di sini)
+    // Gerakan alien horizontal
     public void act(int direction) {
         this.x += direction;
     }
     
-    // Gerak turun ke bawah
+    // Gerakan turun
     public void moveDown() {
         this.y += 15;
     }
